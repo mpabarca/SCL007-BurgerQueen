@@ -1,0 +1,80 @@
+{
+    "menu":{
+        "desayuno":[
+            {
+                "name": "Café Americano",
+                "price":"$500"
+            },
+            {
+                "name": "Café con Leche",
+                "price":"$700"
+            },
+            {
+                "name": "Sandwich jamón con queso",
+                "price":"$1000"
+            },
+            {
+                "name": "Jugo Natural",
+                "price":"$700"
+            }
+        ],
+        "resto":[
+            {
+                "name": "Hamburguesa",
+                "type":[
+                    {
+                        "name": "Hamburguesa Simple",
+                        "price":"$1500"
+                    },
+                    {
+                        "name": "Hamburguesa Doble",
+                        "price":"$2500"
+                    }
+                ],
+                "options":[
+                    "Res",
+                    "Pollo",
+                    "Vegetariana"
+                ],
+                "extra":[
+                    {
+                        "name": "Queso",
+                        "price":"$500"
+                    },
+                    {
+                        "name": "Huevo",
+                        "price":"$500"
+                    }
+                ]
+            },
+            {
+                "name": "Papas Fritas",
+                "price":"$500"
+            },
+            {
+                "name": "Onion Rings",
+                "price":"$500"
+            },
+            {
+                "name": "Jugo Natural",
+                "price":"$700"
+            },
+            {
+                "name": "Café Americano",
+                "price":"$500"
+            },
+            {
+                "name": "Café con Leche",
+                "price":"$700"
+            },
+            {
+                "name": "Sandwich jamón con queso",
+                "price":"$1000"
+            },
+            {
+                "name": "Jugo Natural",
+                "price":"$700"
+            }
+        ]
+    }
+}
