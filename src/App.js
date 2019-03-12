@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import firebase from './fire';
-import Home from './Home';
-import Login from './Login';
+import Home from './home';
+import Login from './login';
 
 import { breakfast } from "./breakfast.json";
 /*
