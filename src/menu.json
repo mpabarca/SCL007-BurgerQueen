@@ -56,24 +56,20 @@
                 "price":"$500"
             },
             {
-                "name": "Jugo Natural",
-                "price":"$700"
-            },
-            {
-                "name": "Café Americano",
+                "name": "Agua 500ml",
                 "price":"$500"
             },
             {
-                "name": "Café con Leche",
+                "name": "Agua 750ml",
+                "price":"$800"
+            },
+            {
+                "name": "Gaseosa 500ml",
                 "price":"$700"
             },
             {
-                "name": "Sandwich jamón con queso",
+                "name": "Gaseosa 750ml",
                 "price":"$1000"
-            },
-            {
-                "name": "Jugo Natural",
-                "price":"$700"
             }
         ]
     }
