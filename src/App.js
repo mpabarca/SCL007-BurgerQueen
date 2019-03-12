@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+import { breakfast } from "./breakfast.json";
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      breakfast
+    };
+  }
+//Autenticación
+
+
   render() {
+
+  const menu = this.state.breakfast.map((food,i)=>{
+    return(
+      <div className="col-md-4">
+        <div className="card mt-4">
+          <div className="card-header">
+            <h3>{food.name}</h3>
+          </div>
+          <div className="card-body">
+            <p>{food.price}</p>
+          </div>
+        </div>
+      </div>
+    )
+  })
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <nav className="navbar navbar-dark bg-dark">
+            <a href="" className="text-white">
+                {this.state.tittle} - {this.state.nmenu}
+            </a>
+        </nav> 
+        <div className="container">
+          <div className="row mt-4">
+            {menu}
+          </div>
+        </div>
+        
       </div>
     );
   }
 }
-
 export default App;
