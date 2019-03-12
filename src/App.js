@@ -1,11 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import fire from './firebase.js';
-import Home from './home.js';
-import Login from './login.js';
 
 import { breakfast } from "./breakfast.json";
 
+class App extends Component {
+  submitFormHandler = event => {
+    event.preventDefault();
+    console.dir(this.refs.name.value); //will give us the name value
+  }
+  
+  render() {
+    return (
+        <div>
+          <form onSubmit={this.submitFormHandler}>
+            <div>
+              <input type="text" name="name" ref="name" />
+            </div>
+          </form>
+        </div>
+    );
+  }
+}
 
 export default App;
 
