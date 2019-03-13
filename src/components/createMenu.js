@@ -26,7 +26,7 @@ class CreateMenu extends Component {
       )
     })
       return (
-        <div className="App">
+        <div className="menu">
           <div className="container">
             <div className="row mt-4">
               {menu}
