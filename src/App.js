@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import InputClient from './components/inputClient';
+import CreateMenu from './components/createMenu';
 
-import { breakfast } from "./json/breakfast.json";
 
 class App extends Component {
   
   render() {
     return (
       <div className="App">
-        <InputClient />      
+        <InputClient />     
+        <CreateMenu />
       </div>
     )
   }

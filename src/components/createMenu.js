@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { breakfast } from "./breakfast.json";
 
 class CreateMenu extends Component {
     constructor(props){
@@ -26,11 +27,6 @@ class CreateMenu extends Component {
     })
       return (
         <div className="App">
-          <nav className="navbar navbar-dark bg-dark">
-              <a href="" className="text-white">
-                  {this.state.tittle} - {this.state.nmenu}
-              </a>
-          </nav> 
           <div className="container">
             <div className="row mt-4">
               {menu}
