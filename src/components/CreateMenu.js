@@ -13,7 +13,7 @@ class CreateMenu extends Component {
   
     const menu = this.state.breakfast.map((food,i)=>{
       return(
-        <div className="col-md-4">
+        <div className="col-m d-4">
           <div className="card mt-4">
             <div className="card-header">
               <h3>{food.name}</h3>

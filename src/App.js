@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import InputClient from './components/inputClient';
-import CreateMenu from './components/createMenu';
+
+import ShowMenu from './components/ShowMenu';
 
 
 class App extends Component {
-  
+
+
+
   render() {
     return (
       <div className="App">
-        <InputClient />     
-        <CreateMenu />
+        <ShowMenu />
       </div>
     )
   }
