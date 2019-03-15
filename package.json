@@ -21,5 +21,18 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "Nos acaban de enviar un correo con una solicitud para un nuevo proyecto. Hay un\r restaurante que nos ha contactado porque quieren que alguien les construya una\r interfaz donde puedan tomar pedidos usando una tablet.",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpabarca/SCL007-BurgerQueen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpabarca/SCL007-BurgerQueen/issues"
+  },
+  "homepage": "https://github.com/mpabarca/SCL007-BurgerQueen#readme"
 }
