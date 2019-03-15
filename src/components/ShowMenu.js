@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InputClient from './InputClient';
-import CreateBreakfast from './CreateBreakfast';
+
 import CreateDinner from './CreateDinner';
 
 class ShowMenu extends Component {
@@ -10,7 +10,7 @@ class ShowMenu extends Component {
       return (
         <div className="ShowMenu">
           <InputClient />  
-          <CreateBreakfast />
+          
         </div>
       )
     }

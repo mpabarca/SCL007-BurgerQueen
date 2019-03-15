@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import CreateBreakfast from './CreateBreakfast';
 
 class InputClient extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      showMenu:false,
+      showName: false,
       name : null,
+      showMenu: false,
     };
   }
   handleInput(event){
@@ -16,6 +18,7 @@ class InputClient extends Component {
     event.preventDefault();
     console.log(this.state.name);
     this.setState({
+      showName: true,
       showMenu: true,
 
     });
@@ -23,7 +26,9 @@ class InputClient extends Component {
   
 
   render(){
-    const showClient = (this.state.showMenu ? (' PEDIDO DE '+(this.state.name).toUpperCase()):' ');
+    const showClient = (this.state.showName ? (' PEDIDO DE '+(this.state.name).toUpperCase()):' ');
+    const printMenu = (this.state.showMenu ? (<CreateBreakfast />):' ');
+    
     return(
       <div>
         <form className="card-body" onSubmit={this.handleSubmit.bind(this)}>
@@ -31,6 +36,7 @@ class InputClient extends Component {
           <input type="submit" />
         </form>
         <h5>{showClient}</h5>
+        {printMenu}
         
       </div>
     )
