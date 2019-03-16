@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CreateBreakfast from './CreateBreakfast';
+import CreateDinner from './CreateDinner';
 
 class InputClient extends Component {
   constructor(props){
@@ -8,7 +9,8 @@ class InputClient extends Component {
     this.state = {
       showName: false,
       name : null,
-      showMenu: false,
+      showBreakfast: false,
+      showDinner: false,
     };
   }
   handleInput(event){
@@ -19,7 +21,8 @@ class InputClient extends Component {
     console.log(this.state.name);
     this.setState({
       showName: true,
-      showMenu: true,
+      showBreakfast: true,
+      showDinner: true,
 
     });
   }
@@ -27,8 +30,8 @@ class InputClient extends Component {
 
   render(){
     const showClient = (this.state.showName ? (' PEDIDO DE '+(this.state.name).toUpperCase()):' ');
-    const printMenu = (this.state.showMenu ? (<CreateBreakfast />):' ');
-    
+    const printBreakfast = (this.state.showBreakfast ? (<CreateBreakfast />):' ');
+    const printDinner = (this.state.showDinner ? (<CreateDinner />):' ');
     return(
       <div>
         <form className="card-body" onSubmit={this.handleSubmit.bind(this)}>
@@ -36,7 +39,8 @@ class InputClient extends Component {
           <input type="submit" />
         </form>
         <h5>{showClient}</h5>
-        {printMenu}
+        {printBreakfast}
+        {printDinner}
         
       </div>
     )
