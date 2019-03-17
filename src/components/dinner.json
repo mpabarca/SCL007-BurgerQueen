@@ -1,32 +1,76 @@
 {
     "dinner":[
         {
-            "name": "Hamburguesa",
-            "type":[
-                {
-                    "name": "Hamburguesa Simple",
-                    "price":"$1500"
-                },
-                {
-                    "name": "Hamburguesa Doble",
-                    "price":"$2500"
-                }
-            ],
-            "options":[
-                "Res",
-                "Pollo",
-                "Vegetariana"
-            ],
-            "extra":[
-                {
-                    "name": "Queso",
-                    "price":"$500"
-                },
-                {
-                    "name": "Huevo",
-                    "price":"$500"
-                }
-            ]
+            "name": "Hamburguesa Simple Res",
+            "price":"$1500"
+        },
+        {
+            "name": "Hamburguesa Simple Pollo",
+            "price":"$1500"
+        },
+        {
+            "name": "Hamburguesa Simple Vegetariana",
+            "price":"$1500"
+        },
+        {
+            "name": "Hamburguesa Simple Res con Queso",
+            "price":"$2000"
+        },
+        {
+            "name": "Hamburguesa Simple Pollo con Queso",
+            "price":"$2000"
+        },
+        {
+            "name": "Hamburguesa Simple Vegetariana con Queso",
+            "price":"$2000"
+        },
+        {
+            "name": "Hamburguesa Simple Res con Huevo",
+            "price":"$2000"
+        },
+        {
+            "name": "Hamburguesa Simple Pollo con Huevo",
+            "price":"$2000"
+        },
+        {
+            "name": "Hamburguesa Simple Vegetariana con Huevo",
+            "price":"$2000"
+        },
+        {
+            "name": "Hamburguesa Doble Res",
+            "price":"$2500"
+        },
+        {
+            "name": "Hamburguesa Doble Pollo",
+            "price":"$2500"
+        },
+        {
+            "name": "Hamburguesa Doble Vegetariana",
+            "price":"$2500"
+        },
+        {
+            "name": "Hamburguesa Doble Res con Queso",
+            "price":"$3000"
+        },
+        {
+            "name": "Hamburguesa Doble Pollo con Queso",
+            "price":"$3000"
+        },
+        {
+            "name": "Hamburguesa Doble Vegetariana con Queso",
+            "price":"$3000"
+        },
+        {
+            "name": "Hamburguesa Doble Res con Huevo",
+            "price":"$3000"
+        },
+        {
+            "name": "Hamburguesa Doble Pollo con Huevo",
+            "price":"$3000"
+        },
+        {
+            "name": "Hamburguesa Doble Vegetariana con Huevo",
+            "price":"$3000"
         },
         {
             "name": "Papas Fritas",
