@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import fire from './Fire';
+import ShowMenu from '../components/ShowMenu';
 
 class Home extends Component {
     constructor(props){
@@ -14,7 +15,7 @@ class Home extends Component {
     render(){
         return(
             <div className="col-md-6">
-                <h1> You are home </h1>
+                <ShowMenu />
                 <button onClick={this.logout}>Log Out</button>
             </div>
         );
