@@ -1,5 +1,6 @@
 {
   "projects": {
-    "master": "burger-queen2019"
+    "master": "burger-queen2019",
+    "default": "burger-queen2019"
   }
 }
