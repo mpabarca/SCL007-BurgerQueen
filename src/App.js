@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import Auth from './components-firebase/Auth';
+import Order from './component-video/Order';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Auth/>
+        <Order/>
       </div>
     );
   }
