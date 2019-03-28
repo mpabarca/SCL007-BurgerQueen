@@ -15,6 +15,7 @@ export default firebase;
 
 
 //configuracion firebase junto con firestore 
+
 /*
 import firebase from 'firebase/app';
 import 'firebase/firestore';
