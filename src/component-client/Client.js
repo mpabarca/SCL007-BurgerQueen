@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import firebase from '../Firebase';
 import 'firebase/firestore';
 
-import showBreakfast from '../component-menu/CreateBreakfast';
-import showDinner from '../component-menu/CreateDinner';
+import CreateBreakfast from '../component-menu/CreateBreakfast';
+import CreateDinner from '../component-menu/CreateDinner';
 
 class Client extends Component {
     constructor(){
@@ -11,8 +11,14 @@ class Client extends Component {
         this.state={
             name:'',
             total:0,
-            order:[]
+            order:[],
+            showBreakfast: false,
+            showDinner: false,
+            showName: false,
         };
+        this.updateInput=this.updateInput.bind(this);
+        this.addClient=this.addClient.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
     updateInput= (event) =>{
         this.setState({
@@ -48,17 +54,25 @@ class Client extends Component {
       }
 
     render(){
-        
+        const showClient = (this.state.showName ? (' PEDIDO DE '+(this.state.name).toUpperCase()):' ');
+        const printBreakfast = (this.state.showBreakfast ? (<CreateBreakfast />):' ');
+        const printDinner = (this.state.showDinner ? (<CreateDinner />):' ');
+
         return(
             <div>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Nombre cliente"
-                    onChange= {this.updateInput}
-                    value={this.state.name}
-                />
-                <input type="submit" onClick={this.addClient}/>
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Nombre cliente"
+                        onChange= {this.updateInput}
+                        value={this.state.name}
+                    />
+                    <input type="submit" onClick={this.addClient} />
+                </form>
+                <h5>{showClient}</h5>
+                {printBreakfast}
+                {printDinner}
             </div>
         )
     }
