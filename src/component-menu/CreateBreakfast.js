@@ -19,9 +19,10 @@ class CreateBreakfast extends Component {
     render() {
   
     const menu = this.state.breakfast.map((food,i)=>{
+      let foodMenu = food.name +'-'+  food.price;
       return(
             <div>
-              <Button variant="secondary" size="lg" value={food.name}>
+              <Button variant="secondary" size="lg" value={foodMenu}>
                 {food.name} {food.price}
               </Button>
             </div>
