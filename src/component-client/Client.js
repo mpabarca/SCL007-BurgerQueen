@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import firebase from '../Firebase';
 import 'firebase/firestore';
+import { Container, Row, Col} from 'react-bootstrap';
 
 import CreateBreakfast from '../component-menu/CreateBreakfast';
 import CreateDinner from '../component-menu/CreateDinner';
@@ -61,6 +62,7 @@ class Client extends Component {
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <h4>Ingresar nombre Cliente</h4>
                     <input
                         type="text"
                         name="name"
@@ -71,8 +73,10 @@ class Client extends Component {
                     <input type="submit" onClick={this.addClient} />
                 </form>
                 <h5>{showClient}</h5>
-                {printBreakfast}
-                {printDinner}
+                <Row>
+                    <Col>{printBreakfast}</Col>
+                    <Col>{printDinner}</Col>
+                </Row>
             </div>
         )
     }

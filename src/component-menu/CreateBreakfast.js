@@ -22,8 +22,8 @@ class CreateBreakfast extends Component {
       let foodMenu = food.name +'-'+  food.price;
       return(
             <div>
-              <Button variant="secondary" size="lg" value={foodMenu}>
-                {food.name} {food.price}
+              <Button variant="secondary" size="lg" value={foodMenu} block>
+                <h6>{food.name} {food.price}</h6>
               </Button>
             </div>
           
