@@ -11,11 +11,17 @@ class Order extends Component{
                     <thead>
                         <tr>
                         <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>COMIDA</th>
+                        <th>PRECIO</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                        <td>#</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        </tr>
+                    </tbody>
                 </Table>
             </Container>
         )
