@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { breakfast } from "./json/breakfast.json";
-
+import { Row, Button } from 'react-bootstrap';
 
 class CreateBreakfast extends Component {
     constructor(props){
@@ -20,29 +20,21 @@ class CreateBreakfast extends Component {
   
     const menu = this.state.breakfast.map((food,i)=>{
       return(
-        
-            <div className="card mt-4">
-              <div className="card-header">
-                <h5>{food.name}</h5>
-              </div>
-              <div className="card-body">
-                <p>{food.price}</p>
-              </div>
+            <div>
+              <Button variant="secondary" size="lg" value={food.name}>
+                {food.name} {food.price}
+              </Button>
             </div>
           
       )
     })
       return (
-        <div className="menu">
           <div>
             <button onClick={this._printMenu.bind(null, true)}>DESAYUNO</button>
-            <div className="container">
-              <div className="row mt-4">
-                { this.state.printMenu && <div>{menu}</div> }
-              </div>
-            </div>
+            <Row>
+              { this.state.printMenu && <div>{menu}</div> }
+            </Row>
           </div>
-        </div>
       );
     }
   }
