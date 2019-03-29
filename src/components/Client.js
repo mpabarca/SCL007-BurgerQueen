@@ -3,8 +3,7 @@ import firebase from '../Firebase';
 import 'firebase/firestore';
 import { Container, Row, Col} from 'react-bootstrap';
 
-import CreateBreakfast from '../component-menu/CreateBreakfast';
-import CreateDinner from '../component-menu/CreateDinner';
+
 
 class Client extends Component {
     constructor(){
@@ -13,8 +12,6 @@ class Client extends Component {
             name:'',
             total:0,
             order:[],
-            showBreakfast: false,
-            showDinner: false,
             showName: false,
         };
         this.updateInput=this.updateInput.bind(this);
@@ -45,19 +42,14 @@ class Client extends Component {
     }
     handleSubmit(event){
         event.preventDefault();
-        console.log(this.state.name);
         this.setState({
           showName: true,
-          showBreakfast: true,
-          showDinner: true,
     
         });
       }
 
     render(){
         const showClient = (this.state.showName ? (' PEDIDO DE '+(this.state.name).toUpperCase()):' ');
-        const printBreakfast = (this.state.showBreakfast ? (<CreateBreakfast />):' ');
-        const printDinner = (this.state.showDinner ? (<CreateDinner />):' ');
 
         return(
             <div>
@@ -72,11 +64,7 @@ class Client extends Component {
                     />
                     <input type="submit" onClick={this.addClient} />
                 </form>
-                <h5>{showClient}</h5>
-                <Row>
-                    <Col>{printBreakfast}</Col>
-                    <Col>{printDinner}</Col>
-                </Row>
+                <h5>{showClient}</h5> 
             </div>
         )
     }
