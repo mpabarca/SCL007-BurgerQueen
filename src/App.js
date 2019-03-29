@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Client from './component-client/Client';
-import Order from './component-order/Order';
+import Client from './components/Client';
+import Order from './components/Order';
 import { Container, Row, Col} from 'react-bootstrap';
-import CreateBreakfast from './component-menu/CreateBreakfast';
-import CreateDinner from './component-menu/CreateDinner';
+import CreateBreakfast from './components/CreateBreakfast';
+import CreateDinner from './components/CreateDinner';
 
 class App extends Component {
   render() {
