@@ -5,7 +5,7 @@ import { Row, Button } from 'react-bootstrap';
 class CreateBreakfast extends Component {
     constructor(props){
       super(props);
-      this.handleSubmit=this.handleSubmit.bind(this);
+      this.handleSubmitBreakfast=this.handleSubmitBreakfast.bind(this);
       this.state={
         breakfast: breakfast,
         printMenu:false,
@@ -18,17 +18,20 @@ class CreateBreakfast extends Component {
       });
     }
     
-    handleSubmit(event){
-      console.log(event.target.value);
+    handleSubmitBreakfast(event){
+      let order=event.target.value;
+      this.state.orders.push(order);
+
+      this.props.handleSubmitBreakfast(this.state.orders);
     }
   
     render() {
   
     const menu = this.state.breakfast.map((food,i)=>{
-      let foodMenu = food.name +'-'+  food.price;
+      let foodMenu = food.name +  food.price;
       return(
             <div>
-              <Button  variant="secondary" size="lg" value={foodMenu} onClick={this.handleSubmit} block>
+              <Button  variant="secondary" size="lg" value={foodMenu} onClick={this.handleSubmitBreakfast} block>
                 <h6>{food.name} {food.price}</h6>
               </Button>
             </div>
