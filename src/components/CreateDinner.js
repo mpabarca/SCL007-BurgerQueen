@@ -15,6 +15,9 @@ class CreateDinner extends Component {
       printMenu: bool
     });
   }
+  handleSubmit(event){
+    console.log(event.target.value);
+  }
 
   render() {
 
@@ -24,8 +27,8 @@ class CreateDinner extends Component {
     return(
       
         <div>
-          <Button variant="secondary" size="lg" value={foodMenu} block>
-          <h6>{food.name} {food.price}</h6>
+          <Button  variant="secondary" size="lg" value={foodMenu} onClick={this.handleSubmit} block>
+            <h6>{food.name} {food.price}</h6>
           </Button>
         </div>
         
