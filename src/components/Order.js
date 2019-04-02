@@ -5,6 +5,26 @@ import { Container, Row, Col, Table } from 'react-bootstrap';
 class Order extends Component{
 
     render(){
+        let orderName= this.props.orderName;
+        let orderPrice= this.props.orderPrice;
+        let order= this.props.order;
+
+        const orderFinal = order.map((food,i)=>{
+            let foodName = orderName[i];
+            let foodPrice= orderPrice[i];
+        
+            return(
+              
+                <tbody>
+                    <tr>
+                    <td>{i}</td>
+                    <td>{foodName}</td>
+                    <td>{foodPrice}</td>
+                    </tr>
+                </tbody>
+                
+            )
+          })
         return(
             <Container>
                 <Table striped bordered hover size="sm">
@@ -15,13 +35,7 @@ class Order extends Component{
                         <th>PRECIO</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                        <td>#</td>
-                        <td>First Name</td>
-                        <td>Last Name</td>
-                        </tr>
-                    </tbody>
+                    {orderFinal}
                 </Table>
             </Container>
         )

@@ -8,29 +8,49 @@ import CreateDinner from './components/CreateDinner';
 
 class App extends Component {
 
+  constructor(props){
+    super(props);
+    this.state={
+      orderName:[],
+      orderPrice:[],
+      order:[]
+    }
+  }
+
   handleSubmitBreakfast=(data)=>{
     let orderBreakfast = data;
-    let orderBreakfastName=[];
-    let orderBreakfastPrice=[];
+    let orderName=[];
+    let orderPrice=[];
 
     orderBreakfast.map((food,i) => {
       let foodArray = food.split("$");
-      orderBreakfastName.push(foodArray[0]);
-      orderBreakfastPrice.push(foodArray[1]);
+      orderName.push(foodArray[0]);
+      orderPrice.push(foodArray[1]);
       
    });
+    this.setState({
+      orderName: orderName,
+      orderPrice: orderPrice,
+      order: orderBreakfast
+    })
   }
   handleSubmitDinner=(data)=>{
     let orderDinner = data;
-    let orderDinnerName=[];
-    let orderDinnerPrice=[];
+    let orderName=[];
+    let orderPrice=[];
 
     orderDinner.map((food,i) => {
       let foodArray = food.split("$");
-      orderDinnerName.push(foodArray[0]);
-      orderDinnerPrice.push(foodArray[1]);
+      orderName.push(foodArray[0]);
+      orderPrice.push(foodArray[1]);
       
    });
+   this.setState({
+    orderName: orderName,
+    orderPrice: orderPrice,
+    order: orderDinner
+  })
+  
   }
 
   render() {
@@ -51,7 +71,13 @@ class App extends Component {
                 />
               </Col>
             </Row></Col>
-            <Col xs={6} md={6} lg={6} ><Order/></Col>
+            <Col xs={6} md={6} lg={6} >
+              <Order
+                orderName={this.state.orderName}
+                orderPrice={this.state.orderPrice}
+                order={this.state.order}
+              />
+              </Col>
           </Row>
         </Container>
       </div>
