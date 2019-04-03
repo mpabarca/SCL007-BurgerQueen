@@ -17,23 +17,22 @@ class App extends Component {
     }
   }
 
-  handleSubmitBreakfast=(data)=>{
-    let orderBreakfast = data;
-    let orderName=[];
-    let orderPrice=[];
+  //Agregar orden Desayuno
+  handleSubmitBreakfast=(item)=>{
+     console.log(item); 
+    
+    let foodArray = item.split("$");
+    console.log(foodArray);
 
-    orderBreakfast.map((food,i) => {
-      let foodArray = food.split("$");
-      orderName.push(foodArray[0]);
-      orderPrice.push(foodArray[1]);
-      
-   });
     this.setState({
-      orderName: orderName,
-      orderPrice: orderPrice,
-      order: orderBreakfast
+      orderName: [...this.state.orderName,foodArray[0]],
+      orderPrice: [...this.state.orderPrice,foodArray[1]],
+      order: [...this.state.order,item]
     })
+    
   }
+
+  //Agregar orden Cena
   handleSubmitDinner=(data)=>{
     let orderDinner = data;
     let orderName=[];
@@ -51,6 +50,24 @@ class App extends Component {
     order: orderDinner
   })
   
+  }
+
+  //Eliminar un producto de la orden
+  deleteFood=(index)=>{
+    const actualOrder = [... this.state.order];
+    const actualOrderName = [... this.state.orderName];
+    const actualOrderPrice = [... this.state.orderPrice];
+
+    const deleteOrder = actualOrder.splice(index,1);
+    const deleteOrderName = actualOrderName.splice(index,1);
+    const deleteOrderPrice = actualOrderPrice.splice(index,1);
+
+    this.setState({
+      order: actualOrder,
+      orderName: actualOrderName,
+      orderPrice: actualOrderPrice
+    })
+    console.log(deleteOrderName + ' eliminado desde apps.js')
   }
 
   render() {
@@ -76,6 +93,7 @@ class App extends Component {
                 orderName={this.state.orderName}
                 orderPrice={this.state.orderPrice}
                 order={this.state.order}
+                deleteFood={this.deleteFood}
               />
               </Col>
           </Row>

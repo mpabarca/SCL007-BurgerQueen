@@ -20,9 +20,8 @@ class CreateBreakfast extends Component {
     
     handleSubmitBreakfast(event){
       let order=event.target.value;
-      this.state.orders.push(order);
-
-      this.props.handleSubmitBreakfast(this.state.orders);
+      //this.state.orders.push(order);
+      this.props.handleSubmitBreakfast(order);
     }
   
     render() {

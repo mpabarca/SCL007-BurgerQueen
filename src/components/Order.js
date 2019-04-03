@@ -6,7 +6,7 @@ class Order extends Component{
 
     constructor(props){
         super(props);
-        this.handleSubmit=this.handleSubmit.bind(this);
+        this.deleteItem=this.deleteItem.bind(this);
         this.state={
             order:[],
             orderName:[],
@@ -15,16 +15,11 @@ class Order extends Component{
         
     }
 
-    handleSubmit(event){
+    deleteItem(event,index){
         event.preventDefault();
-        console.log(event.target.value);
-        /*
-        let itemRemove = event.target.value;
-        let nameRemove = orderName.splice((itemRemove), 1);
-        let orderRemove = order.splice((itemRemove), 1);
-        let priceRemove = orderPrice.splice((itemRemove), 1);
-        console.log (nameRemove + priceRemove +orderRemove);
-        */
+        console.log(index);
+
+        this.props.deleteFood(index);
     }
     
 
@@ -32,24 +27,27 @@ class Order extends Component{
         let orderName=this.props.orderName;
         let orderPrice=this.props.orderPrice;
         let order=this.props.order;
+        let orderFinal;
+        if (order.length>1){
 
-        let orderFinal = order.map((food,i)=>{
+        orderFinal = order.map((food,i)=>{
             let foodName = orderName[i];
             let foodPrice= orderPrice[i];
         
             return(
               
                 <tbody>
-                    <tr>
+                    <tr key={i}>
                     <td>{i}</td>
                     <td>{foodName}</td>
                     <td>{foodPrice}</td>
-                    <td><Button value={i} onClick={this.handleSubmit} className="btn btn-danger">X</Button></td>
+                    <td><Button value={i} onClick={(event) => this.deleteItem(event,i)} className="btn btn-danger">X</Button></td>
                     </tr>
                 </tbody>
                 
             )
           })
+        }
         return(
             <Container>
                 <Table striped bordered hover size="sm">
