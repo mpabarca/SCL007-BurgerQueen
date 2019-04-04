@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Client from './components/Client';
 import Order from './components/Order';
+import TotalOrder from './components/TotalOrder';
 import { Container, Row, Col} from 'react-bootstrap';
 import CreateBreakfast from './components/CreateBreakfast';
 import CreateDinner from './components/CreateDinner';
@@ -95,6 +96,8 @@ class App extends Component {
                 order={this.state.order}
                 deleteFood={this.deleteFood}
               />
+              <TotalOrder
+                orderPrice={this.state.orderPrice}/>
               </Col>
           </Row>
         </Container>
