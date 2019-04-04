@@ -20,7 +20,7 @@ class App extends Component {
 
   //Agregar orden Desayuno
   handleSubmitBreakfast=(item)=>{
-     console.log(item); 
+    console.log(item); 
     
     let foodArray = item.split("$");
     console.log(foodArray);
@@ -34,22 +34,17 @@ class App extends Component {
   }
 
   //Agregar orden Cena
-  handleSubmitDinner=(data)=>{
-    let orderDinner = data;
-    let orderName=[];
-    let orderPrice=[];
+  handleSubmitDinner=(item)=>{
+    console.log(item); 
+    
+    let foodArray = item.split("$");
+    console.log(foodArray);
 
-    orderDinner.map((food,i) => {
-      let foodArray = food.split("$");
-      orderName.push(foodArray[0]);
-      orderPrice.push(foodArray[1]);
-      
-   });
-   this.setState({
-    orderName: orderName,
-    orderPrice: orderPrice,
-    order: orderDinner
-  })
+    this.setState({
+      orderName: [...this.state.orderName,foodArray[0]],
+      orderPrice: [...this.state.orderPrice,foodArray[1]],
+      order: [...this.state.order,item]
+    })
   
   }
 

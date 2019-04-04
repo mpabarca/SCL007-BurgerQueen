@@ -19,9 +19,9 @@ class CreateDinner extends Component {
   }
   handleSubmitDinner(event){
     let order=event.target.value;
-    this.state.orders.push(order);
+    //this.state.orders.push(order);
 
-    this.props.handleSubmitDinner(this.state.orders);
+    this.props.handleSubmitDinner(order);
   }
 
   render() {
