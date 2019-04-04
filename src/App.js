@@ -3,6 +3,7 @@ import './App.css';
 import Client from './components/Client';
 import Order from './components/Order';
 import TotalOrder from './components/TotalOrder';
+import GetOrder from './components/GetOrder';
 import { Container, Row, Col} from 'react-bootstrap';
 import CreateBreakfast from './components/CreateBreakfast';
 import CreateDinner from './components/CreateDinner';
@@ -14,16 +15,21 @@ class App extends Component {
     this.state={
       orderName:[],
       orderPrice:[],
-      order:[]
+      order:[],
+      client:''
     }
+  }
+  //Obtener nombre cliente
+  updateClient=(client)=>{
+    this.setState({
+      client:client
+    })
   }
 
   //Agregar orden Desayuno
   handleSubmitBreakfast=(item)=>{
-    console.log(item); 
     
     let foodArray = item.split("$");
-    console.log(foodArray);
 
     this.setState({
       orderName: [...this.state.orderName,foodArray[0]],
@@ -35,10 +41,8 @@ class App extends Component {
 
   //Agregar orden Cena
   handleSubmitDinner=(item)=>{
-    console.log(item); 
     
     let foodArray = item.split("$");
-    console.log(foodArray);
 
     this.setState({
       orderName: [...this.state.orderName,foodArray[0]],
@@ -63,14 +67,25 @@ class App extends Component {
       orderName: actualOrderName,
       orderPrice: actualOrderPrice
     })
-    console.log(deleteOrderName + ' eliminado desde apps.js')
   }
 
   render() {
     return (
       <div>
         <Container>
-          <Row><Client/></Row>
+          <Row>
+            <Col>
+              <Client
+                updateClient={this.updateClient}
+              />
+            </Col>
+            <Col>
+              <GetOrder
+                updateOrder={this.state.orderName}
+                client={this.state.client}
+              />
+            </Col>
+          </Row>
           <Row>
             <Col xs={6} md={6} lg={6}><Row>
               <Col xs={6} md={6} lg={6}> 

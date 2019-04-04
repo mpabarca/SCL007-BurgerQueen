@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
-import firebase from '../Firebase';
-import 'firebase/firestore';
 import { Container, Row, Col} from 'react-bootstrap';
-
-
 
 class Client extends Component {
     constructor(){
@@ -14,32 +10,16 @@ class Client extends Component {
             order:[],
             showName: false,
         };
-        this.updateInput=this.updateInput.bind(this);
-        this.addClient=this.addClient.bind(this);
+        this.updateInput=this.updateClient.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
     }
-    updateInput= (event) =>{
+    updateClient= (event) =>{
         this.setState({
             name:event.target.value
         });
+        this.props.updateClient(this.state.name);
     }
-    addClient = (event) =>{
-        //event.preventDefaul();
-        const db=firebase.firestore();
-        db.settings({
-            timestampsInSnapshots: true
-          });
-        db.collection("client").add({
-            name: this.state.name,
-            total:2000,
-            order:['Hamburguesa simple Vegetariana','Papas Fritas']
-        }).then(()=>{
-            console.log('subido')
-        }).catch((error)=>{
-            console.log(error);
-        })
-
-    }
+    
     handleSubmit(event){
         event.preventDefault();
         this.setState({
@@ -52,20 +32,19 @@ class Client extends Component {
         const showClient = (this.state.showName ? (' PEDIDO DE '+(this.state.name).toUpperCase()):' ');
 
         return(
-            <div>
+            <Container>
                 <form onSubmit={this.handleSubmit}>
                     <h4>Ingresar nombre Cliente</h4>
                     <input
                         type="text"
                         name="name"
                         placeholder="Nombre cliente"
-                        onChange= {this.updateInput}
                         value={this.state.name}
                     />
-                    <input type="submit" onClick={this.addClient} />
+                    <input type="submit" onClick= {this.updateClient}/>
                 </form>
                 <h5>{showClient}</h5> 
-            </div>
+            </Container>
         )
     }
 }
