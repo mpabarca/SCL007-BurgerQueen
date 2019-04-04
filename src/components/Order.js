@@ -28,7 +28,6 @@ class Order extends Component{
         let orderPrice=this.props.orderPrice;
         let order=this.props.order;
         let orderFinal;
-        if (order.length>1){
 
         orderFinal = order.map((food,i)=>{
             let foodName = orderName[i];
@@ -47,7 +46,7 @@ class Order extends Component{
                 
             )
           })
-        }
+        
         return(
             <Container>
                 <Table striped bordered hover size="sm">
